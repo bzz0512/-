@@ -1,9 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.chemicalbiz.asia/:path*",
-      "permanent": true
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "https://www.chemicalbiz.asia/$1" }
   ]
 }
