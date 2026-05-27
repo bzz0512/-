@@ -1,66 +1,1194 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>湛钊 | 个人主页</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="SH Chemical Group - Leading manufacturer and global distributor of food additives, feed additives, and agricultural products. ISO 9001, FAMI-QS certified. 15+ years of export experience.">
+    <meta name="keywords" content="chemical supplier, food additives, feed additives, citric acid, xanthan gum, MSG, sodium gluconate, lysine, calcium formate, FAMI-QS, ISO 9001, China chemical exporter">
+    <meta name="author" content="SH Chemical Group">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SH Chemical Group | Reliable Chemical Additives Supplier from China">
+    <meta property="og:description" content="One-stop source for food additives, feed additives & agricultural products. BV, ISO 9001, FAMI-QS certified. 15+ years global export experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shchemgroup.com">
+    <title>SH Chemical Group | Reliable Chemical Additives Supplier from China</title>
+    <link rel="canonical" href="https://www.shchemgroup.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ============ CSS RESET & BASE ============ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0A5E8C;
+            --primary-dark: #074263;
+            --primary-light: #E8F4F8;
+            --accent: #2BA84A;
+            --accent-dark: #1E8A3A;
+            --text-dark: #1A2332;
+            --text-mid: #4A5568;
+            --text-light: #718096;
+            --bg-white: #FFFFFF;
+            --bg-light: #F7FAFC;
+            --bg-section: #F0F5F9;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============ NAVBAR ============ */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .navbar.scrolled { box-shadow: var(--shadow-md); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-weight: 700; font-size: 1.35rem; color: var(--primary);
+        }
+        .nav-logo-icon {
+            width: 38px; height: 38px; background: var(--primary);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 1.1rem;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-mid);
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--primary); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--accent); color: #fff; padding: 10px 22px;
+            border-radius: var(--radius-sm); font-weight: 600; font-size: 0.9rem;
+            transition: var(--transition); border: none; cursor: pointer;
+        }
+        .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .nav-mobile-btn {
+            display: none; background: none; border: none; cursor: pointer;
+            width: 32px; height: 32px; position: relative;
+        }
+        .nav-mobile-btn span, .nav-mobile-btn span::before, .nav-mobile-btn span::after {
+            display: block; width: 24px; height: 2px; background: var(--text-dark);
+            position: absolute; left: 4px; transition: var(--transition);
+        }
+        .nav-mobile-btn span { top: 15px; }
+        .nav-mobile-btn span::before { content: ''; top: -7px; }
+        .nav-mobile-btn span::after { content: ''; top: 7px; }
+
+        /* ============ HERO ============ */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #0A5E8C 0%, #074263 40%, #0D3B56 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-inner {
+            display: flex; align-items: center; gap: 60px;
+            position: relative; z-index: 1;
+        }
+        .hero-content { flex: 1; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px; padding: 6px 16px; font-size: 0.82rem;
+            color: rgba(255,255,255,0.9); margin-bottom: 20px;
+        }
+        .hero-badge-dot {
+            width: 8px; height: 8px; background: var(--accent);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .hero h1 {
+            font-size: 3.2rem; font-weight: 800; color: #fff;
+            line-height: 1.15; margin-bottom: 18px; letter-spacing: -0.02em;
+        }
+        .hero h1 .highlight { color: #5FCE7A; }
+        .hero-sub {
+            font-size: 1.15rem; color: rgba(255,255,255,0.8);
+            line-height: 1.7; margin-bottom: 32px; max-width: 540px;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent); color: #fff;
+            padding: 14px 30px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 0.95rem;
+            transition: var(--transition); border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(43,168,74,0.3); }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: #fff;
+            padding: 14px 30px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 0.95rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: var(--transition); cursor: pointer;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+        .hero-visual {
+            flex: 0 0 420px; display: flex; flex-direction: column; gap: 16px;
+        }
+        .hero-stat-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+        .hero-stat-card {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-md); padding: 22px; text-align: center;
+            backdrop-filter: blur(10px); transition: var(--transition);
+        }
+        .hero-stat-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+        .hero-stat-num {
+            font-size: 2rem; font-weight: 800; color: #fff; line-height: 1;
+        }
+        .hero-stat-num span { color: #5FCE7A; }
+        .hero-stat-label {
+            font-size: 0.8rem; color: rgba(255,255,255,0.7);
+            margin-top: 6px; font-weight: 500;
+        }
+        .hero-cert-strip {
+            display: flex; align-items: center; justify-content: center;
+            gap: 24px; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-md); padding: 14px 20px;
+        }
+        .hero-cert {
+            font-size: 0.78rem; color: rgba(255,255,255,0.75); font-weight: 500;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .hero-cert-icon {
+            width: 22px; height: 22px; background: rgba(255,255,255,0.15);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* ============ TRUST BAR ============ */
+        .trust-bar {
+            background: var(--bg-white); border-bottom: 1px solid var(--border);
+            padding: 28px 0;
+        }
+        .trust-inner {
+            display: flex; align-items: center; justify-content: center;
+            gap: 48px; flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 0.88rem; font-weight: 500; color: var(--text-mid);
+        }
+        .trust-icon {
+            width: 40px; height: 40px; background: var(--primary-light);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        /* ============ SECTION COMMON ============ */
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--bg-section); }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-tag {
+            display: inline-block; background: var(--primary-light);
+            color: var(--primary); font-size: 0.78rem; font-weight: 600;
+            padding: 4px 14px; border-radius: 20px; margin-bottom: 14px;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .section-title {
+            font-size: 2.2rem; font-weight: 800; color: var(--text-dark);
+            line-height: 1.2; margin-bottom: 14px;
+        }
+        .section-desc {
+            font-size: 1.05rem; color: var(--text-light);
+            max-width: 640px; margin: 0 auto; line-height: 1.7;
+        }
+
+        /* ============ PRODUCTS ============ */
+        .products-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .product-card {
+            background: var(--bg-white); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); overflow: hidden;
+            transition: var(--transition); position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .product-card-header {
+            padding: 28px 28px 0;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .product-icon {
+            width: 52px; height: 52px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+        }
+        .product-icon.food { background: #FFF3E0; }
+        .product-icon.feed { background: #E8F5E9; }
+        .product-icon.agri { background: #F3E5F5; }
+        .product-card-header h3 {
+            font-size: 1.15rem; font-weight: 700; color: var(--text-dark);
+        }
+        .product-card-header p {
+            font-size: 0.82rem; color: var(--text-light); margin-top: 2px;
+        }
+        .product-card-body { padding: 20px 28px 8px; }
+        .product-tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+        }
+        .product-tag {
+            background: var(--bg-section); border: 1px solid var(--border);
+            padding: 5px 12px; border-radius: 20px; font-size: 0.78rem;
+            color: var(--text-mid); font-weight: 500; transition: var(--transition);
+        }
+        .product-card:hover .product-tag { border-color: var(--primary-light); background: var(--primary-light); color: var(--primary); }
+        .product-card-footer {
+            padding: 16px 28px 24px;
+        }
+        .product-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.88rem; font-weight: 600; color: var(--primary);
+            transition: var(--transition);
+        }
+        .product-link:hover { gap: 10px; }
+
+        /* ============ WHY CHOOSE US ============ */
+        .advantages-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .adv-card {
+            background: var(--bg-white); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 30px 24px;
+            text-align: center; transition: var(--transition);
+        }
+        .adv-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+        .adv-icon {
+            width: 56px; height: 56px; margin: 0 auto 16px;
+            background: var(--primary-light); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+        .adv-card h4 {
+            font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text-dark);
+        }
+        .adv-card p {
+            font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+        }
+
+        /* ============ ABOUT ============ */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center;
+        }
+        .about-image {
+            background: linear-gradient(135deg, var(--primary-light), #D4E9F2);
+            border-radius: var(--radius-lg); height: 400px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .about-image-inner {
+            text-align: center; color: var(--primary);
+        }
+        .about-image-inner .big-num {
+            font-size: 5rem; font-weight: 800; line-height: 1; color: var(--primary);
+        }
+        .about-image-inner .big-label {
+            font-size: 1rem; font-weight: 600; margin-top: 4px;
+        }
+        .about-image::after {
+            content: 'SH'; position: absolute; top: 20px; right: 24px;
+            font-size: 6rem; font-weight: 900; color: rgba(10,94,140,0.06);
+        }
+        .about-content h3 {
+            font-size: 2rem; font-weight: 800; margin-bottom: 18px; color: var(--text-dark);
+            line-height: 1.25;
+        }
+        .about-content .lead {
+            font-size: 1.05rem; color: var(--text-mid); line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .about-highlights {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+        }
+        .about-highlight {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 0; font-size: 0.9rem; color: var(--text-mid); font-weight: 500;
+        }
+        .about-highlight-icon {
+            width: 28px; height: 28px; background: #E8F5E9; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 0.75rem; flex-shrink: 0;
+        }
+
+        /* ============ CERTIFICATIONS ============ */
+        .cert-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .cert-card {
+            background: var(--bg-white); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 32px; text-align: center;
+            transition: var(--transition);
+        }
+        .cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .cert-badge {
+            width: 72px; height: 72px; margin: 0 auto 16px;
+            background: var(--primary-light); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; font-weight: 800; color: var(--primary);
+            border: 3px solid var(--primary);
+        }
+        .cert-card h4 {
+            font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--text-dark);
+        }
+        .cert-card p {
+            font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+        }
+
+        /* ============ MARKETS ============ */
+        .markets-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .market-card {
+            background: var(--bg-white); border: 1px solid var(--border);
+            border-radius: var(--radius-md); padding: 24px; text-align: center;
+            transition: var(--transition);
+        }
+        .market-card:hover { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+        .market-flag { font-size: 2.2rem; margin-bottom: 10px; }
+        .market-card h4 {
+            font-size: 0.92rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px;
+        }
+        .market-card p { font-size: 0.8rem; color: var(--text-light); }
+
+        /* ============ CTA SECTION ============ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 70px 0; text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-section::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2l2 3.5-2 3z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .cta-section h2 {
+            font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 14px;
+            position: relative;
+        }
+        .cta-section p {
+            font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-bottom: 30px;
+            position: relative;
+        }
+        .cta-section .btn-primary { position: relative; font-size: 1rem; padding: 16px 36px; }
+
+        /* ============ CONTACT ============ */
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 24px; }
+        .contact-info h3 {
+            font-size: 1.8rem; font-weight: 800; color: var(--text-dark); margin-bottom: 6px;
+        }
+        .contact-info > p { color: var(--text-light); line-height: 1.7; margin-bottom: 10px; }
+        .contact-item {
+            display: flex; align-items: flex-start; gap: 14px;
+        }
+        .contact-item-icon {
+            width: 44px; height: 44px; background: var(--primary-light);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
+        }
+        .contact-item-text h4 {
+            font-size: 0.88rem; font-weight: 700; color: var(--text-dark); margin-bottom: 3px;
+        }
+        .contact-item-text p {
+            font-size: 0.85rem; color: var(--text-mid); line-height: 1.5;
+        }
+        .contact-socials {
+            display: flex; gap: 12px; margin-top: 10px;
+        }
+        .social-link {
+            width: 40px; height: 40px; border: 1px solid var(--border);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 0.85rem; color: var(--text-mid); transition: var(--transition);
+        }
+        .social-link:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .contact-form-card {
+            background: var(--bg-white); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 36px;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-form-card h4 {
+            font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; color: var(--text-dark);
+        }
+        .form-row { display: flex; gap: 14px; margin-bottom: 14px; }
+        .form-group { flex: 1; display: flex; flex-direction: column; }
+        .form-group label {
+            font-size: 0.82rem; font-weight: 600; color: var(--text-mid);
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 11px 14px;
+            border: 1px solid var(--border); border-radius: var(--radius-sm);
+            font-size: 0.9rem; font-family: inherit; color: var(--text-dark);
+            transition: var(--transition); background: var(--bg-white);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10,94,140,0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            background: var(--accent); color: #fff; border: none;
+            padding: 13px 32px; border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 0.95rem; cursor: pointer;
+            transition: var(--transition); width: 100%; margin-top: 6px;
+        }
+        .form-submit:hover { background: var(--accent-dark); }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: #0D1B2A; color: rgba(255,255,255,0.7);
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px; margin-bottom: 40px;
+        }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 14px; }
+        .footer h5 {
+            font-size: 0.9rem; font-weight: 700; color: #fff;
+            margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em;
+        }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a {
+            font-size: 0.85rem; color: rgba(255,255,255,0.55);
+            transition: var(--transition);
+        }
+        .footer ul a:hover { color: #fff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px; display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .footer-bottom p { font-size: 0.82rem; }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a {
+            font-size: 0.82rem; color: rgba(255,255,255,0.45); transition: var(--transition);
+        }
+        .footer-bottom-links a:hover { color: #fff; }
+
+        /* ============ WHATSAPP FLOAT ============ */
+        .whatsapp-float {
+            position: fixed; bottom: 28px; right: 28px; z-index: 999;
+            width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 14px rgba(37,211,102,0.4);
+            transition: var(--transition); cursor: pointer; border: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+        .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+        /* ============ MOBILE MENU ============ */
+        .mobile-menu {
+            display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.98); z-index: 999;
+            flex-direction: column; padding: 30px 24px;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            font-size: 1.1rem; font-weight: 600; color: var(--text-dark);
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-visual { flex: 0 0 340px; }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .markets-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .nav-mobile-btn { display: block; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-sub { margin: 0 auto 32px; }
+            .hero-actions { justify-content: center; }
+            .hero-visual { flex: none; width: 100%; }
+            .products-grid { grid-template-columns: 1fr; }
+            .advantages-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .markets-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.7rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-stat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .hero-stat-num { font-size: 1.5rem; }
+            .markets-grid { grid-template-columns: 1fr 1fr; }
+            .trust-inner { gap: 20px; }
+        }
+
+        /* ============ SCROLL ANIMATIONS ============ */
+        .fade-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>湛钊</h1>
-            <ul>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#experience">经历</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#contact">联系我</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="hero">
-        <h2>你好，我是湛钊</h2>
-        <p>欢迎来到我的个人主页</p>
-        <a href="#about" class="btn">了解更多</a>
-    </section>
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">SH</div>
+            Chemical <span>Group</span>
+        </a>
+        <div class="nav-links">
+            <a href="#products">Products</a>
+            <a href="#advantages">Why Us</a>
+            <a href="#about">About</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#markets">Markets</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get a Quote</a>
+        <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <span></span>
+        </button>
+    </div>
+</nav>
 
-    <section id="about">
-        <h2>关于我</h2>
-        <p>在这里写一段简短的自我介绍。比如：目前在东京生活/工作，对XXX领域感兴趣，欢迎交流。</p>
-    </section>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#products" onclick="closeMobileMenu()">Products</a>
+    <a href="#advantages" onclick="closeMobileMenu()">Why Us</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#certifications" onclick="closeMobileMenu()">Certifications</a>
+    <a href="#markets" onclick="closeMobileMenu()">Markets</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
 
-    <section id="experience">
-        <h2>经历与项目</h2>
-        <div class="timeline">
-            <div class="item">
-                <h3>2025 - 至今</h3>
-                <p>职位/项目名称 - 公司/描述</p>
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"></div>
+                    ISO 9001 &amp; FAMI-QS Certified Supplier
+                </div>
+                <h1>Your Trusted Source for <span class="highlight">Chemical Additives</span> from China</h1>
+                <p class="hero-sub">15+ years of expertise delivering food additives, feed additives, and agricultural products to manufacturers worldwide. One-stop supply, flexible MOQ, and seamless global logistics.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">
+                        Request a Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#products" class="btn-outline">
+                        View Products
+                    </a>
+                </div>
             </div>
-            <div class="item">
-                <h3>2023 - 2025</h3>
-                <p>另一个经历</p>
+            <div class="hero-visual">
+                <div class="hero-stat-grid">
+                    <div class="hero-stat-card">
+                        <div class="hero-stat-num">15<span>+</span></div>
+                        <div class="hero-stat-label">Years Experience</div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="hero-stat-num">30<span>+</span></div>
+                        <div class="hero-stat-label">Product Types</div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="hero-stat-num">50<span>+</span></div>
+                        <div class="hero-stat-label">Countries Served</div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <div class="hero-stat-num">3</div>
+                        <div class="hero-stat-label">Subsidiaries</div>
+                    </div>
+                </div>
+                <div class="hero-cert-strip">
+                    <div class="hero-cert"><div class="hero-cert-icon">✓</div> Bureau Veritas</div>
+                    <div class="hero-cert"><div class="hero-cert-icon">✓</div> ISO 9001</div>
+                    <div class="hero-cert"><div class="hero-cert-icon">✓</div> FAMI-QS</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="skills">
-        <h2>技能</h2>
-        <ul class="skills-list">
-            <li>技能1</li>
-            <li>技能2</li>
-            <li>技能3</li>
-        </ul>
-    </section>
+<!-- ========== TRUST BAR ========== -->
+<section class="trust-bar">
+    <div class="container">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <div class="trust-icon">🏭</div> Factory-Direct Pricing
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">📦</div> Flexible MOQ
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌍</div> Global Logistics
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🔒</div> REACH Compliant
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💬</div> Multi-Language Support
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2>联系我</h2>
-        <p>Email: 你的邮箱@gmail.com</p>
-        <p>微信 / Twitter / LinkedIn 等</p>
-    </section>
+<!-- ========== PRODUCTS ========== -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="section-tag">Our Products</div>
+            <h2 class="section-title">One-Stop Supply for Your<br>Additive Needs</h2>
+            <p class="section-desc">From food manufacturing to animal nutrition, we provide certified additives that meet international quality standards.</p>
+        </div>
+        <div class="products-grid">
+            <!-- Food Additives -->
+            <div class="product-card fade-up">
+                <div class="product-card-header">
+                    <div class="product-icon food">🧪</div>
+                    <div>
+                        <h3>Food Additives</h3>
+                        <p>Quality ingredients for food & beverage</p>
+                    </div>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-tags">
+                        <span class="product-tag">Citric Acid</span>
+                        <span class="product-tag">Xanthan Gum</span>
+                        <span class="product-tag">MSG</span>
+                        <span class="product-tag">Ascorbic Acid</span>
+                        <span class="product-tag">Sodium Saccharin</span>
+                        <span class="product-tag">Lactic Acid</span>
+                        <span class="product-tag">Maltodextrin</span>
+                        <span class="product-tag">Caustic Soda</span>
+                        <span class="product-tag">Potassium Chloride</span>
+                        <span class="product-tag">Sodium Gluconate</span>
+                        <span class="product-tag">Sodium Erythorbate</span>
+                        <span class="product-tag">Amino Acids</span>
+                    </div>
+                </div>
+                <div class="product-card-footer">
+                    <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <!-- Feed Additives -->
+            <div class="product-card fade-up">
+                <div class="product-card-header">
+                    <div class="product-icon feed">🌾</div>
+                    <div>
+                        <h3>Feed Additives</h3>
+                        <p>FAMI-QS certified for animal nutrition</p>
+                    </div>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-tags">
+                        <span class="product-tag">Calcium Formate</span>
+                        <span class="product-tag">Calcium Propionate</span>
+                        <span class="product-tag">Dicalcium Phosphate</span>
+                        <span class="product-tag">Formic Acid</span>
+                        <span class="product-tag">L-Lysine HCl</span>
+                        <span class="product-tag">L-Lysine Sulfate</span>
+                        <span class="product-tag">Monocalcium Phosphate</span>
+                        <span class="product-tag">Potassium Citrate</span>
+                        <span class="product-tag">Sodium Citrate</span>
+                        <span class="product-tag">Tricalcium Phosphate</span>
+                    </div>
+                </div>
+                <div class="product-card-footer">
+                    <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <!-- Agricultural Products -->
+            <div class="product-card fade-up">
+                <div class="product-card-header">
+                    <div class="product-icon agri">🌿</div>
+                    <div>
+                        <h3>Agricultural Products</h3>
+                        <p>Premium tea, nuts & natural oils</p>
+                    </div>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-tags">
+                        <span class="product-tag">Black Tea</span>
+                        <span class="product-tag">Green Tea</span>
+                        <span class="product-tag">Oolong Tea</span>
+                        <span class="product-tag">Pistachios</span>
+                        <span class="product-tag">Sunflower Seeds</span>
+                        <span class="product-tag">Tomato Paste</span>
+                        <span class="product-tag">Walnuts</span>
+                        <span class="product-tag">Garlic Oil</span>
+                    </div>
+                </div>
+                <div class="product-card-footer">
+                    <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 湛钊 - 基于 GitHub Pages 搭建</p>
-    </footer>
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="section section-alt" id="advantages">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="section-tag">Why Choose Us</div>
+            <h2 class="section-title">Built for International Buyers</h2>
+            <p class="section-desc">We understand what global manufacturers need — reliable supply, consistent quality, and a partner who delivers.</p>
+        </div>
+        <div class="advantages-grid">
+            <div class="adv-card fade-up">
+                <div class="adv-icon">🏭</div>
+                <h4>One-Stop Supply</h4>
+                <p>Source 30+ additives from a single supplier. Reduce vendor management complexity and streamline procurement.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">✅</div>
+                <h4>Triple Certified</h4>
+                <p>Bureau Veritas, ISO 9001:2015, and FAMI-QS certified. REACH compliance for select industrial products.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">📦</div>
+                <h4>Flexible MOQ</h4>
+                <p>Low minimum order quantities for trial orders. Scale up as your market grows — we grow with you.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">🚢</div>
+                <h4>Global Logistics</h4>
+                <p>Door-to-door delivery worldwide. Full customs documentation, transparent pricing, and real-time tracking.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">💰</div>
+                <h4>Transparent Pricing</h4>
+                <p>No hidden fees. Competitive factory-direct pricing with flexible payment terms (T/T, L/C, D/P, D/A).</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">🌐</div>
+                <h4>Multi-Language Team</h4>
+                <p>English, French, Russian, and Spanish speaking staff. Communicate in your language, not ours.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">🔬</div>
+                <h4>Quality Assurance</h4>
+                <p>Strict QC at every stage — raw material inspection, production monitoring, and pre-shipment testing.</p>
+            </div>
+            <div class="adv-card fade-up">
+                <div class="adv-icon">🤝</div>
+                <h4>After-Sales Support</h4>
+                <p>Dedicated account managers. Quick response to issues, technical support, and regulatory guidance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image fade-up">
+                <div class="about-image-inner">
+                    <div class="big-num">15+</div>
+                    <div class="big-label">Years of Excellence</div>
+                </div>
+            </div>
+            <div class="about-content fade-up">
+                <div class="section-tag">About Us</div>
+                <h3>From State Enterprise to Global Chemical Distributor</h3>
+                <p class="lead">SH Chemical Group, formerly the sales division of a state-owned enterprise, has been independently operating since 2010. Rooted in the values of <strong>Sharing</strong> and <strong>Honesty</strong> — the "SH" in our name — we've built a 15+ year track record serving manufacturers and distributors across 50+ countries.</p>
+                <p class="lead">With three subsidiaries covering chemicals, agricultural products, and multi-category import/export, we offer the breadth of a trading company with the reliability of a manufacturer.</p>
+                <div class="about-highlights">
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> BV Verified Company
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> ISO 9001:2015
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> FAMI-QS Approved
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> 3 Subsidiaries
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> 50+ Export Markets
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div> 4-Language Team
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CERTIFICATIONS ========== -->
+<section class="section section-alt" id="certifications">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="section-tag">Certifications</div>
+            <h2 class="section-title">Internationally Recognized Standards</h2>
+            <p class="section-desc">Our certifications are your assurance of quality, safety, and compliance with global regulations.</p>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card fade-up">
+                <div class="cert-badge">BV</div>
+                <h4>Bureau Veritas Verification</h4>
+                <p>Independently audited and verified by Bureau Veritas, confirming our company's legitimacy, production capability, and export compliance.</p>
+            </div>
+            <div class="cert-card fade-up">
+                <div class="cert-badge">ISO</div>
+                <h4>ISO 9001:2015</h4>
+                <p>Certified quality management system ensuring consistent product quality, continuous improvement, and customer satisfaction across all operations.</p>
+            </div>
+            <div class="cert-card fade-up">
+                <div class="cert-badge">FQ</div>
+                <h4>FAMI-QS</h4>
+                <p>European feed additive safety certification. Validates our feed-grade products meet EU standards for animal nutrition safety and traceability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MARKETS ========== -->
+<section class="section" id="markets">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="section-tag">Global Reach</div>
+            <h2 class="section-title">Serving 50+ Countries Worldwide</h2>
+            <p class="section-desc">Strong presence in South America, Southeast Asia, Middle East, Africa, and Europe — with deep expertise in emerging market requirements.</p>
+        </div>
+        <div class="markets-grid">
+            <div class="market-card fade-up">
+                <div class="market-flag">🌎</div>
+                <h4>South America</h4>
+                <p>Brazil, Colombia, Chile, Peru</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌏</div>
+                <h4>Southeast Asia</h4>
+                <p>Vietnam, Thailand, Indonesia</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌍</div>
+                <h4>Middle East &amp; Africa</h4>
+                <p>UAE, Saudi Arabia, Egypt, Nigeria</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌍</div>
+                <h4>Europe</h4>
+                <p>Germany, Netherlands, Poland</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌏</div>
+                <h4>South Asia</h4>
+                <p>India, Bangladesh, Pakistan</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌎</div>
+                <h4>Central America</h4>
+                <p>Mexico, Guatemala, Ecuador</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌏</div>
+                <h4>East Asia</h4>
+                <p>South Korea, Japan</p>
+            </div>
+            <div class="market-card fade-up">
+                <div class="market-flag">🌍</div>
+                <h4>CIS Region</h4>
+                <p>Russia, Kazakhstan, Uzbekistan</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Source Smarter?</h2>
+        <p>Get competitive pricing and free samples for your first order.</p>
+        <a href="#contact" class="btn-primary">
+            Get Your Free Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="section-tag">Get in Touch</div>
+            <h2 class="section-title">Let's Discuss Your Requirements</h2>
+            <p class="section-desc">Typically respond within 2 hours during business days.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info fade-up">
+                <h3>Contact Us</h3>
+                <p>We'd love to hear about your project. Reach out and our team will get back to you promptly.</p>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📧</div>
+                    <div class="contact-item-text">
+                        <h4>Email</h4>
+                        <p>info@shchemgroup.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div class="contact-item-text">
+                        <h4>Phone</h4>
+                        <p>+86-371-5505 1391 / 2753</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📠</div>
+                    <div class="contact-item-text">
+                        <h4>Fax</h4>
+                        <p>+86-371-6906 9915</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-text">
+                        <h4>Office</h4>
+                        <p>B1201 Pufa International Finance Center,<br>No.299 Jinshui Rd, Zhengzhou, Henan 450008, China</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🌐</div>
+                    <div class="contact-item-text">
+                        <h4>Website</h4>
+                        <p>www.shchemgroup.com</p>
+                    </div>
+                </div>
+                <div class="contact-socials">
+                    <a href="#" class="social-link" title="LinkedIn">in</a>
+                    <a href="#" class="social-link" title="Facebook">fb</a>
+                    <a href="#" class="social-link" title="WhatsApp">wa</a>
+                    <a href="#" class="social-link" title="YouTube">yt</a>
+                </div>
+            </div>
+            <div class="contact-form-card fade-up">
+                <h4>Send Us an Inquiry</h4>
+                <form id="inquiryForm" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company Ltd.">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:14px">
+                        <label for="product">Product of Interest</label>
+                        <select id="product" name="product">
+                            <option value="">Select a product category</option>
+                            <option value="food-additives">Food Additives</option>
+                            <option value="feed-additives">Feed Additives</option>
+                            <option value="agricultural-products">Agricultural Products</option>
+                            <option value="multiple">Multiple Categories</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:14px">
+                        <label for="message">Your Requirements *</label>
+                        <textarea id="message" name="message" placeholder="Please describe your requirements: product name, specifications, quantity, destination port, etc." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Submit Inquiry →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" style="color:#fff;margin-bottom:0">
+                    <div class="nav-logo-icon">SH</div>
+                    Chemical <span>Group</span>
+                </a>
+                <p>SH CHEMICAL GROUP LIMITED — Your trusted partner for food additives, feed additives, and agricultural products from China. Sharing quality, Honesty in every deal.</p>
+            </div>
+            <div>
+                <h5>Products</h5>
+                <ul>
+                    <li><a href="#products">Food Additives</a></li>
+                    <li><a href="#products">Feed Additives</a></li>
+                    <li><a href="#products">Agricultural Products</a></li>
+                    <li><a href="#products">Industrial Chemicals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#markets">Global Markets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#contact">Request a Quote</a></li>
+                    <li><a href="#contact">Get Samples</a></li>
+                    <li><a href="#contact">Technical Support</a></li>
+                    <li><a href="#contact">Regulatory Info</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SH Chemical Group Limited. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== WHATSAPP FLOAT ========== -->
+<a href="https://wa.me/8637155051391" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.881 11.881 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('active', menuOpen);
+        const spans = mobileMenuBtn.querySelectorAll('span');
+        if (menuOpen) {
+            spans[0].style.transform = 'rotate(45deg)';
+            spans[0].style.top = '15px';
+            spans[0].style.position = 'relative';
+        } else {
+            spans[0].style.transform = '';
+        }
+    });
+
+    function closeMobileMenu() {
+        menuOpen = false;
+        mobileMenu.classList.remove('active');
+    }
+
+    // Scroll animations
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form submission (demo)
+    document.getElementById('inquiryForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Inquiry Sent Successfully!';
+        btn.style.background = '#2BA84A';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            e.target.reset();
+        }, 3000);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
