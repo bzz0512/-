@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.chemicalbiz.asia/:path*",
+      "permanent": true
+    }
+  ]
+}
