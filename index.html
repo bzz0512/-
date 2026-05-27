@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SH Chemical Group - Leading manufacturer and global distributor of food additives, feed additives, and agricultural products. ISO 9001, FAMI-QS certified. 15+ years of export experience.">
-    <meta name="keywords" content="chemical supplier, food additives, feed additives, citric acid, xanthan gum, MSG, sodium gluconate, lysine, calcium formate, FAMI-QS, ISO 9001, China chemical exporter">
+    <meta name="description" content="SH Chemical Group - Leading manufacturer and global distributor of food additives, feed additives, industrial chemicals, and agricultural products. ISO 9001, FAMI-QS certified. 15+ years of export experience.">
+    <meta name="keywords" content="chemical supplier, food additives, feed additives, industrial chemicals, citric acid, xanthan gum, MSG, lysine, calcium formate, FAMI-QS, ISO 9001, China chemical exporter">
     <meta name="author" content="SH Chemical Group">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="SH Chemical Group | Reliable Chemical Additives Supplier from China">
-    <meta property="og:description" content="One-stop source for food additives, feed additives & agricultural products. BV, ISO 9001, FAMI-QS certified. 15+ years global export experience.">
+    <meta property="og:description" content="One-stop source for food additives, feed additives, industrial chemicals & agricultural products. BV, ISO 9001, FAMI-QS certified. 15+ years global export experience.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.shchemgroup.com">
     <title>SH Chemical Group | Reliable Chemical Additives Supplier from China</title>
@@ -234,7 +234,7 @@
 
         /* ============ PRODUCTS ============ */
         .products-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
+            display: grid; grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
         .product-card {
@@ -245,6 +245,14 @@
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        .product-card.featured {
+            grid-column: 1 / -1;
+            border-color: var(--accent);
+            border-width: 2px;
+        }
+        .product-card.featured:hover {
             border-color: var(--primary);
         }
         .product-card-header {
@@ -259,11 +267,17 @@
         .product-icon.food { background: #FFF3E0; }
         .product-icon.feed { background: #E8F5E9; }
         .product-icon.agri { background: #F3E5F5; }
+        .product-icon.industrial { background: #E3F2FD; }
         .product-card-header h3 {
             font-size: 1.15rem; font-weight: 700; color: var(--text-dark);
         }
         .product-card-header p {
             font-size: 0.82rem; color: var(--text-light); margin-top: 2px;
+        }
+        .featured-badge {
+            background: var(--accent); color: #fff; font-size: 0.7rem;
+            font-weight: 700; padding: 3px 10px; border-radius: 12px;
+            margin-left: auto; text-transform: uppercase; letter-spacing: 0.04em;
         }
         .product-card-body { padding: 20px 28px 8px; }
         .product-tags {
@@ -275,6 +289,22 @@
             color: var(--text-mid); font-weight: 500; transition: var(--transition);
         }
         .product-card:hover .product-tag { border-color: var(--primary-light); background: var(--primary-light); color: var(--primary); }
+
+        /* Food additives sub-categories */
+        .food-subcats {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            padding: 16px 28px 8px;
+        }
+        .food-subcat h4 {
+            font-size: 0.82rem; font-weight: 700; color: var(--primary);
+            margin-bottom: 8px; padding-bottom: 4px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        .food-subcat .product-tags { gap: 6px; }
+        .food-subcat .product-tag {
+            font-size: 0.72rem; padding: 3px 8px;
+        }
+
         .product-card-footer {
             padding: 16px 28px 24px;
         }
@@ -352,6 +382,21 @@
             width: 28px; height: 28px; background: #E8F5E9; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             color: var(--accent); font-size: 0.75rem; flex-shrink: 0;
+        }
+        .subsidiary-list {
+            margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border);
+        }
+        .subsidiary-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 12px; font-size: 0.88rem; color: var(--text-mid);
+            line-height: 1.5;
+        }
+        .subsidiary-item strong {
+            color: var(--text-dark); white-space: nowrap;
+        }
+        .subsidiary-dot {
+            width: 8px; height: 8px; background: var(--primary);
+            border-radius: 50%; margin-top: 6px; flex-shrink: 0;
         }
 
         /* ============ CERTIFICATIONS ============ */
@@ -444,6 +489,7 @@
             width: 40px; height: 40px; border: 1px solid var(--border);
             border-radius: 10px; display: flex; align-items: center; justify-content: center;
             font-size: 0.85rem; color: var(--text-mid); transition: var(--transition);
+            text-decoration: none;
         }
         .social-link:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
@@ -542,6 +588,7 @@
             .advantages-grid { grid-template-columns: repeat(2, 1fr); }
             .markets-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .food-subcats { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .nav-links, .nav-cta { display: none; }
@@ -552,6 +599,8 @@
             .hero-actions { justify-content: center; }
             .hero-visual { flex: none; width: 100%; }
             .products-grid { grid-template-columns: 1fr; }
+            .product-card.featured { grid-column: 1; }
+            .food-subcats { grid-template-columns: 1fr 1fr; }
             .advantages-grid { grid-template-columns: 1fr; }
             .about-grid { grid-template-columns: 1fr; }
             .cert-grid { grid-template-columns: 1fr; }
@@ -567,6 +616,7 @@
             .hero-stat-num { font-size: 1.5rem; }
             .markets-grid { grid-template-columns: 1fr 1fr; }
             .trust-inner { gap: 20px; }
+            .food-subcats { grid-template-columns: 1fr; }
         }
 
         /* ============ SCROLL ANIMATIONS ============ */
@@ -621,7 +671,7 @@
                     ISO 9001 &amp; FAMI-QS Certified Supplier
                 </div>
                 <h1>Your Trusted Source for <span class="highlight">Chemical Additives</span> from China</h1>
-                <p class="hero-sub">15+ years of expertise delivering food additives, feed additives, and agricultural products to manufacturers worldwide. One-stop supply, flexible MOQ, and seamless global logistics.</p>
+                <p class="hero-sub">15+ years of expertise delivering food additives, feed additives, industrial chemicals, and agricultural products to manufacturers worldwide. One-stop supply, flexible MOQ, and seamless global logistics.</p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn-primary">
                         Request a Quote
@@ -639,7 +689,7 @@
                         <div class="hero-stat-label">Years Experience</div>
                     </div>
                     <div class="hero-stat-card">
-                        <div class="hero-stat-num">30<span>+</span></div>
+                        <div class="hero-stat-num">50<span>+</span></div>
                         <div class="hero-stat-label">Product Types</div>
                     </div>
                     <div class="hero-stat-card">
@@ -690,38 +740,89 @@
         <div class="section-header fade-up">
             <div class="section-tag">Our Products</div>
             <h2 class="section-title">One-Stop Supply for Your<br>Additive Needs</h2>
-            <p class="section-desc">From food manufacturing to animal nutrition, we provide certified additives that meet international quality standards.</p>
+            <p class="section-desc">From food manufacturing to animal nutrition and industrial applications, we provide certified additives that meet international quality standards.</p>
         </div>
         <div class="products-grid">
-            <!-- Food Additives -->
-            <div class="product-card fade-up">
+
+            <!-- Food Additives (FEATURED - Full Width) -->
+            <div class="product-card featured fade-up">
                 <div class="product-card-header">
                     <div class="product-icon food">🧪</div>
                     <div>
                         <h3>Food Additives</h3>
-                        <p>Quality ingredients for food & beverage</p>
+                        <p>Certified ingredients for food & beverage industries</p>
                     </div>
+                    <span class="featured-badge">★ Core Product</span>
                 </div>
-                <div class="product-card-body">
-                    <div class="product-tags">
-                        <span class="product-tag">Citric Acid</span>
-                        <span class="product-tag">Xanthan Gum</span>
-                        <span class="product-tag">MSG</span>
-                        <span class="product-tag">Ascorbic Acid</span>
-                        <span class="product-tag">Sodium Saccharin</span>
-                        <span class="product-tag">Lactic Acid</span>
-                        <span class="product-tag">Maltodextrin</span>
-                        <span class="product-tag">Caustic Soda</span>
-                        <span class="product-tag">Potassium Chloride</span>
-                        <span class="product-tag">Sodium Gluconate</span>
-                        <span class="product-tag">Sodium Erythorbate</span>
-                        <span class="product-tag">Amino Acids</span>
+                <div class="food-subcats">
+                    <div class="food-subcat">
+                        <h4>🥤 Drinks & Beverages</h4>
+                        <div class="product-tags">
+                            <span class="product-tag">Citric Acid</span>
+                            <span class="product-tag">Ascorbic Acid</span>
+                            <span class="product-tag">Xanthan Gum</span>
+                            <span class="product-tag">Sodium Saccharin</span>
+                            <span class="product-tag">Sucralose</span>
+                            <span class="product-tag">Potassium Sorbate</span>
+                            <span class="product-tag">Sodium Benzoate</span>
+                            <span class="product-tag">Caramel Color</span>
+                            <span class="product-tag">Fructose</span>
+                            <span class="product-tag">Lactic Acid</span>
+                            <span class="product-tag">Sodium Cyclamate</span>
+                            <span class="product-tag">Acesulfame-K</span>
+                        </div>
+                    </div>
+                    <div class="food-subcat">
+                        <h4>🥩 Meat & Sausages</h4>
+                        <div class="product-tags">
+                            <span class="product-tag">Sodium Erythorbate</span>
+                            <span class="product-tag">Carrageenan</span>
+                            <span class="product-tag">STPP</span>
+                            <span class="product-tag">MSG</span>
+                            <span class="product-tag">Gelatin</span>
+                            <span class="product-tag">Sodium Alginate</span>
+                            <span class="product-tag">SHMP</span>
+                            <span class="product-tag">Konjac Gum</span>
+                            <span class="product-tag">Sodium Ascorbate</span>
+                            <span class="product-tag">CMC</span>
+                        </div>
+                    </div>
+                    <div class="food-subcat">
+                        <h4>🧀 Dairy Products</h4>
+                        <div class="product-tags">
+                            <span class="product-tag">Cocoa Powder</span>
+                            <span class="product-tag">Titanium Dioxide</span>
+                            <span class="product-tag">Stevioside</span>
+                            <span class="product-tag">Maltodextrin</span>
+                            <span class="product-tag">Sodium Bicarbonate</span>
+                            <span class="product-tag">DCP</span>
+                            <span class="product-tag">Maltitol</span>
+                            <span class="product-tag">Aspartame</span>
+                            <span class="product-tag">Xylitol</span>
+                            <span class="product-tag">Sodium Diacetate</span>
+                        </div>
+                    </div>
+                    <div class="food-subcat">
+                        <h4>🍰 Bakery & Confectionery</h4>
+                        <div class="product-tags">
+                            <span class="product-tag">Calcium Propionate</span>
+                            <span class="product-tag">Vanillin</span>
+                            <span class="product-tag">Sorbitol</span>
+                            <span class="product-tag">Menthol Crystal</span>
+                            <span class="product-tag">SAPP</span>
+                            <span class="product-tag">SALP</span>
+                            <span class="product-tag">Wheat Gluten</span>
+                            <span class="product-tag">Yeast Extract</span>
+                            <span class="product-tag">Ethyl Vanillin</span>
+                            <span class="product-tag">Agar Agar</span>
+                        </div>
                     </div>
                 </div>
                 <div class="product-card-footer">
                     <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
+
             <!-- Feed Additives -->
             <div class="product-card fade-up">
                 <div class="product-card-header">
@@ -733,13 +834,19 @@
                 </div>
                 <div class="product-card-body">
                     <div class="product-tags">
+                        <span class="product-tag">L-Lysine Sulphate</span>
+                        <span class="product-tag">L-Lysine 98.5%</span>
+                        <span class="product-tag">DL-Methionine</span>
+                        <span class="product-tag">L-Threonine</span>
+                        <span class="product-tag">L-Tryptophan</span>
+                        <span class="product-tag">L-Isoleucine</span>
+                        <span class="product-tag">L-Arginine</span>
+                        <span class="product-tag">L-Valine</span>
                         <span class="product-tag">Calcium Formate</span>
                         <span class="product-tag">Calcium Propionate</span>
                         <span class="product-tag">Dicalcium Phosphate</span>
-                        <span class="product-tag">Formic Acid</span>
-                        <span class="product-tag">L-Lysine HCl</span>
-                        <span class="product-tag">L-Lysine Sulfate</span>
                         <span class="product-tag">Monocalcium Phosphate</span>
+                        <span class="product-tag">Formic Acid</span>
                         <span class="product-tag">Potassium Citrate</span>
                         <span class="product-tag">Sodium Citrate</span>
                         <span class="product-tag">Tricalcium Phosphate</span>
@@ -749,6 +856,37 @@
                     <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
+
+            <!-- Industrial Chemicals -->
+            <div class="product-card fade-up">
+                <div class="product-card-header">
+                    <div class="product-icon industrial">⚗️</div>
+                    <div>
+                        <h3>Industrial Chemicals</h3>
+                        <p>High-purity chemicals for diverse industries</p>
+                    </div>
+                </div>
+                <div class="product-card-body">
+                    <div class="product-tags">
+                        <span class="product-tag">Glacial Acetic Acid</span>
+                        <span class="product-tag">Phosphoric Acid 85%</span>
+                        <span class="product-tag">Caustic Soda</span>
+                        <span class="product-tag">Potassium Hydroxide</span>
+                        <span class="product-tag">Potassium Carbonate</span>
+                        <span class="product-tag">Calcium Carbonate</span>
+                        <span class="product-tag">Ammonium Chloride</span>
+                        <span class="product-tag">Sodium Cyanide</span>
+                        <span class="product-tag">Alcohol</span>
+                        <span class="product-tag">Titanium Dioxide</span>
+                        <span class="product-tag">Polyester Chips</span>
+                        <span class="product-tag">Sodium Sulfate</span>
+                    </div>
+                </div>
+                <div class="product-card-footer">
+                    <a href="#contact" class="product-link">Inquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
             <!-- Agricultural Products -->
             <div class="product-card fade-up">
                 <div class="product-card-header">
@@ -790,7 +928,7 @@
             <div class="adv-card fade-up">
                 <div class="adv-icon">🏭</div>
                 <h4>One-Stop Supply</h4>
-                <p>Source 30+ additives from a single supplier. Reduce vendor management complexity and streamline procurement.</p>
+                <p>Source 50+ additives from a single supplier. Reduce vendor management complexity and streamline procurement.</p>
             </div>
             <div class="adv-card fade-up">
                 <div class="adv-icon">✅</div>
@@ -844,8 +982,8 @@
             <div class="about-content fade-up">
                 <div class="section-tag">About Us</div>
                 <h3>From State Enterprise to Global Chemical Distributor</h3>
-                <p class="lead">SH Chemical Group, formerly the sales division of a state-owned enterprise, has been independently operating since 2010. Rooted in the values of <strong>Sharing</strong> and <strong>Honesty</strong> — the "SH" in our name — we've built a 15+ year track record serving manufacturers and distributors across 50+ countries.</p>
-                <p class="lead">With three subsidiaries covering chemicals, agricultural products, and multi-category import/export, we offer the breadth of a trading company with the reliability of a manufacturer.</p>
+                <p class="lead">SH Chemical Group, formerly the sales department of a prominent state-owned enterprise, has been independently operating since September 2010. Rooted in the values of <strong>Sharing</strong> and <strong>Honesty</strong> — the "SH" in our name — we've built a 15+ year track record serving manufacturers and distributors across 50+ countries.</p>
+                <p class="lead">With three subsidiaries covering chemicals, agriculture, and multi-category import/export, we offer the breadth of a trading company with the reliability of a manufacturer.</p>
                 <div class="about-highlights">
                     <div class="about-highlight">
                         <div class="about-highlight-icon">✓</div> BV Verified Company
@@ -864,6 +1002,16 @@
                     </div>
                     <div class="about-highlight">
                         <div class="about-highlight-icon">✓</div> 4-Language Team
+                    </div>
+                </div>
+                <div class="subsidiary-list">
+                    <div class="subsidiary-item">
+                        <div class="subsidiary-dot"></div>
+                        <div><strong>Henan Tea Ceremony Limited</strong> — embraces the essence of agriculture and agro-products.</div>
+                    </div>
+                    <div class="subsidiary-item">
+                        <div class="subsidiary-dot"></div>
+                        <div><strong>Henan Middle Earth Imp and Exp Limited</strong> — facilitates seamless imports and exports of a wide range of other products.</div>
                     </div>
                 </div>
             </div>
@@ -911,22 +1059,22 @@
             <div class="market-card fade-up">
                 <div class="market-flag">🌎</div>
                 <h4>South America</h4>
-                <p>Brazil, Colombia, Chile, Peru</p>
+                <p>Brazil, Argentina, Colombia, Chile, Peru, Suriname</p>
             </div>
             <div class="market-card fade-up">
                 <div class="market-flag">🌏</div>
                 <h4>Southeast Asia</h4>
-                <p>Vietnam, Thailand, Indonesia</p>
+                <p>Vietnam, Thailand, Indonesia, Philippines</p>
             </div>
             <div class="market-card fade-up">
                 <div class="market-flag">🌍</div>
                 <h4>Middle East &amp; Africa</h4>
-                <p>UAE, Saudi Arabia, Egypt, Nigeria</p>
+                <p>UAE, Saudi Arabia, Turkey, Egypt, South Africa, Zimbabwe, Ghana, Nigeria</p>
             </div>
             <div class="market-card fade-up">
                 <div class="market-flag">🌍</div>
                 <h4>Europe</h4>
-                <p>Germany, Netherlands, Poland</p>
+                <p>United Kingdom, Italy</p>
             </div>
             <div class="market-card fade-up">
                 <div class="market-flag">🌏</div>
@@ -941,12 +1089,12 @@
             <div class="market-card fade-up">
                 <div class="market-flag">🌏</div>
                 <h4>East Asia</h4>
-                <p>South Korea, Japan</p>
+                <p>South Korea</p>
             </div>
             <div class="market-card fade-up">
-                <div class="market-flag">🌍</div>
-                <h4>CIS Region</h4>
-                <p>Russia, Kazakhstan, Uzbekistan</p>
+                <div class="market-flag">🌎</div>
+                <h4>North America</h4>
+                <p>United States, Canada</p>
             </div>
         </div>
     </div>
@@ -970,24 +1118,31 @@
         <div class="section-header fade-up">
             <div class="section-tag">Get in Touch</div>
             <h2 class="section-title">Let's Discuss Your Requirements</h2>
-            <p class="section-desc">Typically respond within 2 hours during business days.</p>
+            <p class="section-desc">Typically respond within 12 hours during business days.</p>
         </div>
         <div class="contact-grid">
             <div class="contact-info fade-up">
                 <h3>Contact Us</h3>
                 <p>We'd love to hear about your project. Reach out and our team will get back to you promptly.</p>
                 <div class="contact-item">
+                    <div class="contact-item-icon">👤</div>
+                    <div class="contact-item-text">
+                        <h4>Contact Person</h4>
+                        <p>Fred Bai</p>
+                    </div>
+                </div>
+                <div class="contact-item">
                     <div class="contact-item-icon">📧</div>
                     <div class="contact-item-text">
                         <h4>Email</h4>
-                        <p>info@shchemgroup.com</p>
+                        <p>fred@shchemgroup.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-item-icon">📞</div>
                     <div class="contact-item-text">
-                        <h4>Phone</h4>
-                        <p>+86-371-5505 1391 / 2753</p>
+                        <h4>Phone / WhatsApp</h4>
+                        <p>+86 15286827351</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1012,10 +1167,8 @@
                     </div>
                 </div>
                 <div class="contact-socials">
-                    <a href="#" class="social-link" title="LinkedIn">in</a>
-                    <a href="#" class="social-link" title="Facebook">fb</a>
-                    <a href="#" class="social-link" title="WhatsApp">wa</a>
-                    <a href="#" class="social-link" title="YouTube">yt</a>
+                    <a href="https://www.linkedin.com/in/fred-bai-291609277" target="_blank" class="social-link" title="LinkedIn">in</a>
+                    <a href="https://wa.me/8615286827351" target="_blank" class="social-link" title="WhatsApp">wa</a>
                 </div>
             </div>
             <div class="contact-form-card fade-up">
@@ -1047,6 +1200,7 @@
                             <option value="">Select a product category</option>
                             <option value="food-additives">Food Additives</option>
                             <option value="feed-additives">Feed Additives</option>
+                            <option value="industrial-chemicals">Industrial Chemicals</option>
                             <option value="agricultural-products">Agricultural Products</option>
                             <option value="multiple">Multiple Categories</option>
                         </select>
@@ -1071,15 +1225,15 @@
                     <div class="nav-logo-icon">SH</div>
                     Chemical <span>Group</span>
                 </a>
-                <p>SH CHEMICAL GROUP LIMITED — Your trusted partner for food additives, feed additives, and agricultural products from China. Sharing quality, Honesty in every deal.</p>
+                <p>SH CHEMICAL GROUP LIMITED — Your trusted partner for food additives, feed additives, industrial chemicals, and agricultural products from China. Sharing quality, Honesty in every deal.</p>
             </div>
             <div>
                 <h5>Products</h5>
                 <ul>
                     <li><a href="#products">Food Additives</a></li>
                     <li><a href="#products">Feed Additives</a></li>
-                    <li><a href="#products">Agricultural Products</a></li>
                     <li><a href="#products">Industrial Chemicals</a></li>
+                    <li><a href="#products">Agricultural Products</a></li>
                 </ul>
             </div>
             <div>
@@ -1112,7 +1266,7 @@
 </footer>
 
 <!-- ========== WHATSAPP FLOAT ========== -->
-<a href="https://wa.me/8637155051391" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/8615286827351" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.881 11.881 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
